@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;900&display=swap');
+
+:root {
+    --colour-black: #181818;
+    --colour-white: white;
+    --colour-orange: #FE912E;
+    --colour-cyan: #43CAD7;
+    --colour-cyan-dark: #31B3C0;
+    
+    /* dynamic colours */
+    --colour-text: white;
+    
+    --heading: "Spartan", sans-serif;
+    --subheading: "Spartan", sans-serif;
+    --content: "Spartan", sans-serif;
+    
+    --bold: 900;
+    --semi-bold: 500;
+    --regular: 400;
+
+    --linespace: 1.5;
+    --padding: 3em;
+    --gap: 1.5em;
+    
+    --shadow: 0 0 10px 1px rgba(0,0,0,0.3);
+    
+    --round: 100%;
+    
+    /* z-index */
+    --z-cursor: 1000;
+    --z-topbar: 100;
+    --z-sidebar: 101;
+    --z-propop: 102;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+/* ::selection {
+    background-color: var(--colour-black);
+    color: var(--colour-white);
+} */
+
+html, button, a {
+    font: var(--regular) 1em/var(--linespace) var(--content);
+    color: var(--colour-text);
+}
+
+p {
+    font: var(--regular) 1.1em/var(--linespace) var(--content);
+}
+
+p span {
+    font: var(--bold) 1em/var(--linespace) var(--content);
+}
+
+h1 {
+    font: var(--bold) 3em/1.3 var(--heading);
+}
+h1.coloured {
+    color: var(--colour-orange);
+}
+
+h2 {
+    font: var(--bold) 1.625em/1.3 var(--heading);
+}
+h3 {
+    font: var(--bold) 1.125em/var(--linespace) var(--heading);
+    color: var(--colour-text);
+}
+h4 {
+    font: var(--bold) 1em/var(--linespace) var(--subheading);
+    color: var(--colour-text);
+}
+h4 span {
+    font: var(--regular) 0.9em/var(--linespace) var(--subheading);
+}
+
+h5 {
+    font: var(--regular) 1em/var(--linespace) var(--subheading);
+}
+
+h6 {
+    font: 700 0.8em/var(--linespace) var(--subheading);
+}
+
+body {
+}
+
+/* ________________BTN__________________ */
+
+button.button, .button {
+    background-color: var(--colour-cyan);
+    
+    border: none;
+    border-radius: 10em;
+    outline: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: calc(var(--gap) * 0.4) calc(var(--gap) * 1);
+    cursor: pointer;
+}
+
+button:hover, a:hover {
+    background-color: var(--colour-cyan-dark);
+}
+
+/* ________________NAV__________________ */
+
+nav.topbar {
+    position: fixed;
+    z-index: var(--z-topbar);
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr;
+    width: 100%;
+    padding: var(--padding);
+    padding-top: calc(var(--gap) * 1.5);
+    mix-blend-mode: exclusion;
+}
+nav.topbar .sub-nav {
+    display: flex;
+    flex-direction: row;
+    gap: calc(var(--gap) * 2);
+}
+nav.topbar .logo {
+    justify-self: center;
+}
+nav.topbar .logo img {
+    width: 7em;
+}
+nav.topbar .cart {
+    justify-self: right;
+}
+nav.topbar .cart img {
+    width: 4em;
+}
+
+/* ________________SECTIONS__________________ */
+
+section {
+    background-color: var(--colour-black);
+    padding: var(--padding);
+    min-height: 100vh;
+}
+section.hero {
+    background-image: url('../media/texture.png');
+    background-size: 100% 100%;
+    background-position: 50%;
+}
+
+section.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: calc(var(--padding) * 1);
+    background-color: var(--colour-orange);
+}
+section.hero img {
+    width: 100%;
+    max-width: 34em;
+}
+section.hero > * {
+    padding: 0 var(--padding);
+}
+section.hero .info > * {
+    margin-bottom: calc(var(--gap) * 2);
+}
+section.hero .info, section.hero .hero-image {
+    align-self: center;
+    gap: var(--gap);
+}
+section.hero .info h5 {
+    max-width: 20em;
+}
+section.hero .hero-image {
+    justify-self: right;
+    margin-top: var(--padding);
+}
+section.hero .hero-image {
+    position: relative;
+}
+section.hero .hero-image .mark {
+    position: absolute;
+    width: 8em;
+    top: -4em;
+    left: 4em;
+}
+section.hero .hero-image img {
+    margin-left: auto;
+}
+
+section.commercial {
+    background-color: white;
+    --text-colour: var(--colour-black);
+    color: var(--text-colour);
+}
+section.commercial > * {
+    margin-bottom: var(--padding);
+}
+section.commercial .info {
+    display: grid;
+    grid-template-columns: 40% auto;
+    gap: var(--padding);
+    padding: var(--padding);
+}
+
+section.commercial .diagram {
+    text-align: center;
+}
+section.commercial .diagram img {
+    width: 28em;
+    margin: 0 auto;
+    filter: invert(1);
+}
+
+section.commercial video {
+    width: 100%;
+}
+
+
+section.begin {
+    background-color: var(--colour-orange);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: var(--padding);
+    min-height: unset;
+}
+section.begin .info {
+    gap: var(--padding);
+    display: flex;
+    flex-direction: column;
+    max-width: 30em;
+    padding-left: var(--padding);
+    align-self: center;
+}
+section.begin .image {
+    position: relative;
+    margin: calc(var(--padding) * -1) 0;
+    margin-right: calc(var(--padding) * -1);
+}
+section.begin .image img {
+    width: 100%;
+    display: block;
+}
+
+section.sustainable {
+    display: grid;
+    align-content: center;
+}
+section.sustainable .info {
+    gap: var(--padding);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 var(--padding);
+}
+
+/* ________________SECTION HEADER__________________ */
+
+
+@media screen and (min-width: 70em) {
+    :root {
+        --padding: 5em;
+    }
+    section {
+        background-color: var(--colour-black);
+        padding: var(--padding);
+    }
+    section.hero .hero-image .mark {
+        width: 10em;
+    }
+}
+
