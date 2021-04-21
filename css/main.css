@@ -252,7 +252,7 @@ section.begin .info {
     gap: var(--padding);
     display: flex;
     flex-direction: column;
-    max-width: 30em;
+    max-width: 32em;
     padding-left: var(--padding);
     align-self: center;
 }
